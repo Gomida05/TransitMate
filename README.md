@@ -64,5 +64,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 📄 License
 -----------
-Apache-2.0 License – (See LICENSE)[https://github.com/Gomida05/TransitMate/blob/main/LICENSE]
+Apache-2.0 License – (See LICENSE)[https://github.com/Gomida05/TransitMate/blob/main/LICENSE] (Hey)
 
