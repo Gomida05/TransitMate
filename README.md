@@ -27,23 +27,6 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 - API: Open data National Rail API
 - UI Components: Jetpack compose and ViewModel
 
-🚀 Getting Started
-------------------
-
-### Prerequisites
-
-- Android Studio
-- Sign up for Open data National Rail and Huxley2 API key
-- Internet connection
-
-### Setup Instructions
-
-1. Clone the repo: get clone https://github.com/Gomida05/Transit-Mate.git
-2. Open the project in Android Studio  
-3. Build and run on an emulator or physical device  
-
-⚠️ Make sure to configure the API base URL if needed in the network layer.
-
 🧩 TODO / Future Improvements
 ------------------------------
 
@@ -55,7 +38,7 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 📦 Play Store Status
 ---------------------
 
-Currently in closed testing in google app store - launching soon!
+It's now available to test in google app store [Google Play Store](https://play.google.com/store/apps/details?id=com.das.transitMate)!
 
 🤝 Contributing
 ----------------
