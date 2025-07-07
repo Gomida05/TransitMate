@@ -40,10 +40,6 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 
 It's now available to test in google app store [Google Play Store](https://play.google.com/store/apps/details?id=com.das.transitMate)!
 
-🤝 Contributing
-----------------
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 📄 License
 -----------
