@@ -5,13 +5,13 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 
 ✨ Features
 -----------
-
 🔍 Live Departures – See real-time train departures from any UK station  
 📥 Live Arrivals – View arrivals at selected stations with live status  
 🔁 From-To Planner – Find departures between two selected stations  
 ✅ Live Status – Displays estimated times, platform info, and "On time" indicators  
 🔧 Clean and intuitive Material Design UI  
 📲 Currently in closed testing on Google Play  
+
 
 📱 Screenshots
 --------------
@@ -21,7 +21,6 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 
 🛠️ Tech Stack
 --------------
-
 - Language: Kotlin
 - Framework: Android SDK
 - API: Open data National Rail API
@@ -29,15 +28,12 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 
 🧩 TODO / Future Improvements
 ------------------------------
-
 - [ ] Favorites / Bookmarked stations  
 - [ ] Notifications for delays or cancellations  
-- [ ] Offline support with cached data
 - [ ] Voice accessibility and screen reader support  
 
 📦 Play Store Status
 ---------------------
-
 It's now available to test in google app store [Google Play Store](https://play.google.com/store/apps/details?id=com.das.transitMate)!
 
 
