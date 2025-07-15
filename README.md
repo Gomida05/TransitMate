@@ -23,7 +23,7 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 --------------
 - Language: Kotlin
 - Framework: Android SDK
-- API: Open data National Rail API
+- API: Open Data National Rail API
 - UI Components: Jetpack compose and ViewModel
 
 🧩 TODO / Future Improvements
