@@ -17,7 +17,7 @@ Transit Mate is an Android app that provides real-time UK train timetable inform
 --------------
 | Departures Tab                                             | From-To Planner                                   |
 |------------------------------------------------------------|---------------------------------------------------|
-| <img src="https://play-lh.googleusercontent.com/5vDAF4_Gy6MADCa980Q4SLqig0gR-Er3m-Y4zSoXr_ATvEopMVG_jo-P8GVBOiBX-vtQZcnDMKgdMQHGa8__=w1052-h592-rw"/> | <img src="https://play-lh.googleusercontent.com/tsyIJkfn1IC6C6lRPcOQEtWK7oRTCVc54CkUoVo3NZH6SU5R9DhwQfVC8es12riLNSw=w1052-h592-rw"/> |
+| <img src="https://play-lh.googleusercontent.com/5vDAF4_Gy6MADCa980Q4SLqig0gR-Er3m-Y4zSoXr_ATvEopMVG_jo-P8GVBOiBX-vtQZcnDMKgdMQHGa8__=w1052-h592-rw"/> | <img src="https://play-lh.googleusercontent.com/evAgpjFZgJ_F_eTlEupVoMpCa-QcoqvcjUJjPkGfk4q25h77Grm215OA1WTZL3_QdqdUrMwHtxsSWfXGfjtg3WM=w1052-h592-rw"/> |
 
 🛠️ Tech Stack
 --------------
