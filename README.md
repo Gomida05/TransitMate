@@ -1,86 +1,108 @@
-# 🚆 Transit Mate
+# Transit Mate: Advanced UK Rail Intelligence
 
-Transit Mate is an Android app that provides real-time UK train information using the National Rail Open Data API. Built with modern Android tools like Jetpack Compose, it offers a fast, clean, and reliable way to check departures, arrivals, and plan journeys across the UK rail network.
+Transit Mate is a high-performance Android application designed to provide comprehensive, real-time intelligence for the United Kingdom's railway network. Built with a focus on data integrity, privacy, and minimalist design, it serves as a sophisticated companion for both daily commuters and long-distance travelers.
+
+The application leverages direct feeds from National Rail and a custom-built infrastructure to deliver precise timing, platform information, and service disruptions across more than 2,500 stations.
 
 ---
 
-## 📱 App Overview
+## Visual Interface
 
-| Departures Tab | From-To Planner |
-|----------------|-----------------|
+<div style="text-align:center">
+
+|                                                  Real-Time Live Boards                                                   |                                                  A-to-B Journey Planning                                                  |
+|:------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
 | <img src="https://github.com/Gomida05/Gomida05.github.io/blob/main/Projects/TransitMate/screenshots/Home.png?raw=true"/> | <img src="https://github.com/Gomida05/Gomida05.github.io/blob/main/Projects/TransitMate/screenshots/Route.png?raw=true"/> |
+</div>
+
 
 ---
 
-## ✨ Features
+## Architecture and Data Flow
 
-### 🚉 Live Train Information
-- **Live Departures & Arrivals** – Real-time data for UK stations  
-- **Station Board** – View services with platform, delays, and status  
-- **Service Details** – Expand any train to see full calling patterns  
+Transit Mate utilizes a modern, reactive architecture built on Jetpack Compose and Kotlin Coroutines. The project is structured using a multi-module approach to ensure scalability and maintainability.
 
-### 🔁 Route Planner
-- Search direct services between two stations  
-- Swap stations instantly  
-- Fast results with smart caching (no unnecessary reloads)  
+```mermaid
+graph TD
+    subgraph "External Data Sources"
+        NR[National Rail Darwin API]
+        KB[Custom Ktor Backend / Google Cloud]
+    end
 
-### 🔍 Smart Search
-- Fast station search with debounce + caching  
-- Reuse previous searches instantly  
-- Clean inline search UI  
+    subgraph "Data Layer"
+        Repo[Repositories]
+        DS[DataStore Preferences]
+        DB[(SQLite / Room - JourneyDB)]
+        Cache[Local JSON Cache]
+    end
 
-### 🎫 Ticket Information
-- **Ticket Types** – Browse and search ticket categories  
-- **Restrictions** – View detailed fare restrictions  
-- Data cached locally for faster access  
+    subgraph "UI Layer (Jetpack Compose)"
+        VM[ViewModels / StateFlow]
+        UI[Screens / Components]
+        Rem[Reminder Engine]
+    end
 
-### ⚡ Performance Improvements
-- In-memory + file caching for faster load times  
-- Reduced unnecessary API calls  
-- Smooth navigation with no reload flicker  
-- Faster startup and improved responsiveness  
-
-### 🎨 UI & UX
-- Built fully with **Jetpack Compose**  
-- Clean Material Design interface  
-- Smooth animations and expandable components  
-
----
-
-## 🛠️ Tech Stack
-
-- **Language:** Kotlin  
-- **UI:** Jetpack Compose  
-- **Architecture:** ViewModel + StateFlow  
-- **APIs:** National Rail Open Data & Huxley2  
-- **Networking:** OkHttp  
-- **Data Handling:** XML parsing (XmlPullParser)  
-- **Caching:** Memory + local file caching  
+    NR --> Repo
+    KB --> Repo
+    Repo --> Cache
+    Repo --> VM
+    VM --> UI
+    DS --> UI
+    DB <--> Rem
+    Rem --> UI
+```
 
 ---
 
-## 🧩 Future Improvements
+## Key Capabilities
 
-- [ ] Favorites / Bookmarked stations  
-- [ ] Notifications for delays or cancellations  
-- [ ] Offline support for key data  
-- [ ] Improved accessibility (screen reader support)  
+### Real-Time Station Intelligence
+*   **Live Boards:** High-frequency data streams provide up-to-the-minute departure and arrival information.
+*   **Platform Tracking:** Stay informed with precise platform assignments and real-time updates on changes.
+*   **Calling Patterns:** View full service schedules including every intermediate stop and timing.
+
+### Journey Planning and Timetables
+*   **A-to-B Planner:** A robust engine for planning direct routes between any two stations in the UK.
+*   **National Timetable:** Instant access to the complete schedule for the entire network, supporting historical and future service lookups.
+
+### Regulatory and Ticketing Information
+*   **Ticket Encyclopedia:** Clear explanations of advance, off-peak, and anytime ticket categories.
+*   **Restriction Intelligence:** Direct access to detailed validity rules and easement conditions to ensure compliance with official terms.
+
+### Smart Reminder Engine
+*   **Deterministic Alerts:** Local notification system powered by a robust SQLite backend.
+*   **Exact Alarms:** Utilizes Android's `BroadcastReceiver` and `AlarmManager` for precise, minute-perfect reminders before departure.
 
 ---
 
-## 📦 Play Store Status
+## Technical Specifications
 
-It's now available to test in Google Play Store  
-👉 https://play.google.com/store/apps/details?id=com.das.transitMate  
+Transit Mate is developed using the industry-standard "Gold Standard" for modern Android development:
+
+*   **Language:** 100% Pure Kotlin.
+*   **Backend:** Custom Ktor service hosted on Google Cloud Platform (GCP).
+*   **UI Framework:** Jetpack Compose (Declarative UI).
+*   **Navigation:** Navigation3 for sophisticated backstack management.
+*   **Concurrency:** Kotlin Coroutines and Flow for reactive data streams.
+*   **Dependency Injection:** Hilt (Dagger) for robust dependency management.
+*   **Persistence:** Room/SQLite for local database and DataStore for preferences.
+*   **Security:** Firebase App Check and Google Cloud protection.
 
 ---
 
-## 📄 License
+## Implementation Details
 
-This project is licensed under the Apache License 2.0 – see the [LICENSE](https://github.com/Gomida05/TransitMate/blob/main/LICENSE) file for details.
+### Theme and Design
+The application features a minimalist monochrome design language. The primary palette is restricted to pure Black and White, utilizing subtle surface elevations and outlines to create hierarchy without visual clutter. Functional colors (Success Green, Warning Orange, and Error Red) are reserved strictly for critical status information to maximize readability.
+
+### Privacy Policy
+Transit Mate operates on a "Zero Analytics" philosophy. There is no user account requirement, no tracking, and absolutely no data collection. All journey data and reminders are stored locally on the device.
 
 ---
 
-## ❤️ Notes
+## Availability
 
-Built to make UK train travel faster, simpler, and more reliable—especially for everyday commuters.
+Transit Mate is available for download on the [Google Play Store](https://play.google.com/store/apps/details?id=com.das.transitMate).
+
+---
+*Developed with precision for the United Kingdom rail commuter.*
