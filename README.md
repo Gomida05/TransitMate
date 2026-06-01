@@ -8,12 +8,9 @@ The application leverages direct feeds from National Rail (Darwin) and a custom-
 
 ## Visual Interface
 
-<div style="text-align:center">
-
-|                                                  Real-Time Live Boards                                                   |                                                  A-to-B Journey Planning                                                  |
-|:------------------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|
-| <img src="https://github.com/Gomida05/Gomida05.github.io/blob/main/Projects/TransitMate/screenshots/Home.png?raw=true"/> | <img src="https://github.com/Gomida05/Gomida05.github.io/blob/main/Projects/TransitMate/screenshots/Route.png?raw=true"/> |
-</div>
+| Home Page | Live Departure Board | Ticket Discovery | 
+| :---: | :---: | :---: |
+| <img src="https://play-lh.googleusercontent.com/ac99XXXQVRoyK7uvSa-ECaM_QEjVUUqOqOqakC9ckDCAD294eh3UMF_i6WzgNt9X_T9dolfCcusNshOe2hQfiA=w1052-h592-rw" width="200"/> | <img src="https://play-lh.googleusercontent.com/CiqG4NGXvy14IVCQHXEla4GNkWs1wSWClePx9ds7W77b5gNQnhGaNEblBjFlakeo5hHkFiPG-eC-m5xszjSu=w1052-h592-rw" width="200"/> | <img src="https://play-lh.googleusercontent.com/V2PJ96JAsgn6YXDizYdZML_1KpvNTxeXVzCtLPGg8iz5T_QQGU6CjZlqvgqm3AO0J9KEQzoViGX7ctKcDcSs2TU=w1052-h592-rw" width="200"/>
 
 
 ---
