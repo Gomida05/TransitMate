@@ -1,8 +1,8 @@
 # Transit Mate: Advanced UK Rail Intelligence
 
-Transit Mate is a high-performance Android application designed to provide comprehensive, real-time intelligence for the United Kingdom's railway network. Built with a focus on data integrity, privacy, and minimalist design, it serves as a sophisticated companion for both daily commuters and long-distance travelers.
+Transit Mate is a high-performance Android application designed to provide comprehensive, real-time intelligence for the United Kingdom's railway network. Built with a focus on data integrity, reliability, and minimalist design, it serves as a sophisticated companion for both daily commuters and long-distance travelers.
 
-The application leverages direct feeds from National Rail and a custom-built infrastructure to deliver precise timing, platform information, and service disruptions across more than 2,500 stations.
+The application leverages direct feeds from National Rail (Darwin) and a custom-built infrastructure to deliver precise timing, platform information, and service disruptions across more than 2,500 stations.
 
 ---
 
@@ -15,42 +15,6 @@ The application leverages direct feeds from National Rail and a custom-built inf
 | <img src="https://github.com/Gomida05/Gomida05.github.io/blob/main/Projects/TransitMate/screenshots/Home.png?raw=true"/> | <img src="https://github.com/Gomida05/Gomida05.github.io/blob/main/Projects/TransitMate/screenshots/Route.png?raw=true"/> |
 </div>
 
-
----
-
-## Architecture and Data Flow
-
-Transit Mate utilizes a modern, reactive architecture built on Jetpack Compose and Kotlin Coroutines. The project is structured using a multi-module approach to ensure scalability and maintainability.
-
-```mermaid
-graph TD
-    subgraph "External Data Sources"
-        NR[National Rail Darwin API]
-        KB[Custom Ktor Backend / Google Cloud]
-    end
-
-    subgraph "Data Layer"
-        Repo[Repositories]
-        DS[DataStore Preferences]
-        DB[(SQLite / Room - JourneyDB)]
-        Cache[Local JSON Cache]
-    end
-
-    subgraph "UI Layer (Jetpack Compose)"
-        VM[ViewModels / StateFlow]
-        UI[Screens / Components]
-        Rem[Reminder Engine]
-    end
-
-    NR --> Repo
-    KB --> Repo
-    Repo --> Cache
-    Repo --> VM
-    VM --> UI
-    DS --> UI
-    DB <--> Rem
-    Rem --> UI
-```
 
 ---
 
@@ -70,33 +34,32 @@ graph TD
 *   **Restriction Intelligence:** Direct access to detailed validity rules and easement conditions to ensure compliance with official terms.
 
 ### Smart Reminder Engine
-*   **Deterministic Alerts:** Local notification system powered by a robust SQLite backend.
-*   **Exact Alarms:** Utilizes Android's `BroadcastReceiver` and `AlarmManager` for precise, minute-perfect reminders before departure.
+*   **Minute-Perfect Alerts:** Local notification system with a modern grid layout and persistent scheduling.
+*   **Exact Alarms:** Utilizes Android's `AlarmManager` and `BroadcastReceiver` to ensure alerts trigger precisely at the scheduled time, even in low-power modes.
 
 ---
 
 ## Technical Specifications
 
-Transit Mate is developed using the industry-standard "Gold Standard" for modern Android development:
+Transit Mate is developed using the modern Android "Gold Standard":
 
 *   **Language:** 100% Pure Kotlin.
-*   **Backend:** Custom Ktor service hosted on Google Cloud Platform (GCP).
-*   **UI Framework:** Jetpack Compose (Declarative UI).
-*   **Navigation:** Navigation3 for sophisticated backstack management.
-*   **Concurrency:** Kotlin Coroutines and Flow for reactive data streams.
-*   **Dependency Injection:** Hilt (Dagger) for robust dependency management.
-*   **Persistence:** Room/SQLite for local database and DataStore for preferences.
-*   **Security:** Firebase App Check and Google Cloud protection.
+*   **Backend:** Custom Ktor service integrated with Supabase for high-performance data handling.
+*   **UI Framework:** Jetpack Compose (Declarative UI) with Material 3.
+*   **Architecture:** Clean Architecture with Repository pattern and Hilt Dependency Injection.
+*   **Persistence:** Room for journey data and DataStore for user preferences.
+*   **Security:** Firebase App Check and Google Play Integrity API for robust application protection.
+*   **Networking:** Ktor Client with Kotlinx Serialization for efficient data exchange.
 
 ---
 
 ## Implementation Details
 
 ### Theme and Design
-The application features a minimalist monochrome design language. The primary palette is restricted to pure Black and White, utilizing subtle surface elevations and outlines to create hierarchy without visual clutter. Functional colors (Success Green, Warning Orange, and Error Red) are reserved strictly for critical status information to maximize readability.
+The application features a minimalist monochrome design language. The primary palette is restricted to pure Black and White, utilizing subtle surface elevations and outlines to create hierarchy without visual clutter. Functional colors are reserved strictly for critical status information to maximize readability.
 
-### Privacy Policy
-Transit Mate operates on a "Zero Analytics" philosophy. There is no user account requirement, no tracking, and absolutely no data collection. All journey data and reminders are stored locally on the device.
+### Privacy and Stability
+Transit Mate prioritizes user privacy. While utilizing Firebase for essential crash reporting and performance monitoring to ensure application stability, no personal journey data is collected or tracked externally. All user reminders and planned journeys are stored securely and locally on the device.
 
 ---
 
